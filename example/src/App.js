@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'react-floating-dropdown'
+import ReactFloatingDropdown from 'react-floating-dropdown'
 
 export default class App extends Component {
   render () {
     return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
-      </div>
+      <ReactFloatingDropdown indexName="Floating Dropdown"
+                             toggleStyle={{width: '150px'}}>
+        <div>Menu Item 1</div>
+        <div>Menu Item 1</div>
+      </ReactFloatingDropdown>
     )
   }
 }

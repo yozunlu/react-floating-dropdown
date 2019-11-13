@@ -1,8 +1,126 @@
 /* add css styles here (optional) */
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.FloatingDropdownContainer {
+  position: fixed;
+  z-index: 50000;
+  width: 50vh;
+  height: 50vh;
+  padding: 0;
+  left: 10px;
+  bottom: 200px;
 }
+
+.FloatingDropdownContainerMiniSubmenu {
+  opacity: 1;
+  background-color: rgb(14, 160, 255);
+  border: 1px solid #0ea0ff;
+  border-radius: 4px;
+  padding: 9px;
+  width: 90px;
+  transition: opacity 0.5s;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.FloatingDropdownSideBar {
+  position: relative;
+}
+
+.FloatingDropdownContainerMiniSubmenuListGroup {
+  border: 1px solid #0ea0ff;
+  border-radius: 4px;
+  top: 0px;
+  opacity: 0;
+  visibility: hidden;
+  height: 45vh;
+  width: 45vh;
+  overflow-y: auto;
+  flex-direction: column;
+  position: absolute;
+}
+
+.FloatingDropdownSubmenuTopBar {
+  background-color: #0ea0ff;
+  color: white;
+  padding: 13px;
+}
+
+.FloatingDropdownSubmenuTopBar span {
+  float: right;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*@keyframes :global(fadeOut) {*/
+/*  0% {*/
+/*    opacity: 1;*/
+/*    visibility: visible;*/
+/*  }*/
+/*  100% {*/
+/*    opacity: 0;*/
+/*    visibility: hidden;*/
+/*  }*/
+/*}*/
+
+/*@keyframes :global(fadeIn) {*/
+/*  0% {*/
+/*    opacity: 0;*/
+/*  }*/
+/*  100% {*/
+/*    opacity: 1;*/
+/*    visibility: visible;*/
+/*  }*/
+/*}*/
+
+:global(.Floating-Dropdown-Fade-In) {
+  animation: fadeIn 0.5s ease;
+  /*animation-duration: 0.5s;*/
+  animation-iteration-count: 1;
+  /*animation-timing-function: ease;*/
+  animation-fill-mode: forwards;
+}
+
+:global(.Floating-Dropdown-Fade-Out) {
+  animation: fadeOut 0.5s ease;
+  /*animation-duration: 0.5s;*/
+  animation-iteration-count: 1;
+  /*animation-timing-function: ease;*/
+  animation-fill-mode: forwards;
+}
+
+/*.Floating-Dropdown-Fade-In {*/
+/*  animation-name: fadeIn;*/
+/*  animation-duration: 0.5s;*/
+/*  animation-iteration-count: 1;*/
+/*  animation-timing-function: ease;*/
+/*  animation-fill-mode: forwards;*/
+/*}*/
+
+/*.Floating-Dropdown-Fade-Out {*/
+/*  animation-name: fadeOut;*/
+/*  animation-duration: 0.5s;*/
+/*  animation-iteration-count: 1;*/
+/*  animation-timing-function: ease;*/
+/*  animation-fill-mode: forwards;*/
+/*}*/
