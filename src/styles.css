@@ -33,9 +33,9 @@
   top: 0px;
   opacity: 0;
   visibility: hidden;
-  height: 45vh;
+  height: 60vh;
   width: 45vh;
-  overflow-y: auto;
+  overflow-y: hidden;
   flex-direction: column;
   position: absolute;
 }
@@ -51,7 +51,12 @@
   cursor: pointer;
 }
 
-@keyframes fadeIn {
+.FloatingDropdownSubmenuContent {
+  height: 100%;
+  overflow-y: auto;
+}
+
+@keyframes FloatingDropdownFadeIn {
   0% {
     opacity: 0;
   }
@@ -61,7 +66,7 @@
   }
 }
 
-@keyframes fadeOut {
+@keyframes FloatingDropdownFadeOut {
   0% {
     opacity: 1;
     visibility: visible;
@@ -94,7 +99,7 @@
 /*}*/
 
 :global(.Floating-Dropdown-Fade-In) {
-  animation: fadeIn 0.5s ease;
+  animation: FloatingDropdownFadeIn 0.5s ease;
   /*animation-duration: 0.5s;*/
   animation-iteration-count: 1;
   /*animation-timing-function: ease;*/
@@ -102,7 +107,7 @@
 }
 
 :global(.Floating-Dropdown-Fade-Out) {
-  animation: fadeOut 0.5s ease;
+  animation: FloatingDropdownFadeOut 0.5s ease;
   /*animation-duration: 0.5s;*/
   animation-iteration-count: 1;
   /*animation-timing-function: ease;*/

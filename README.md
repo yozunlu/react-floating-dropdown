@@ -20,10 +20,24 @@ import MyComponent from 'react-floating-dropdown'
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <ReactFloatingDropdown>
+        {items}
+      <ReactFloatingDropdown>
     )
   }
 }
+```
+
+## Usage
+
+```jsx
+indexName: string,
+containerStyle: object,
+toggleStyle: object,
+dropdownStyle: object,
+dropdownTopBarStyle: object,
+toggleAction: string/element,
+dropdownContentStyle: object
 ```
 
 ## License

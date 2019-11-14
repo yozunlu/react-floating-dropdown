@@ -39,14 +39,14 @@ class FloatingDropdown extends Component {
                style={this.props.dropdownStyle}
                ref={this.menu}>
             <div className={styles.FloatingDropdownSubmenuTopBar}
-                 style={this.props.dropdownTopBar}>
+                 style={this.props.dropdownTopBarStyle}>
               {this.props.indexName}
               <span onClick={this.closeDropdown}>
                                 {this.props.toggleAction ? this.props.toggleAction : "X"}
                             </span>
             </div>
             <div className={styles.FloatingDropdownSubmenuContent}
-                 style={this.props.dropdownContent}>
+                 style={this.props.dropdownContentStyle}>
               {this.props.children}
             </div>
           </div>
