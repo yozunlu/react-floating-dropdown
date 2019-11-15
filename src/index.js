@@ -1,52 +1,49 @@
 import React, { Component } from 'react'
 import styles from './styles.css'
+import classnames from 'classnames'
 
 class FloatingDropdown extends Component {
-
-  constructor(props) {
-    super(props);
-    this.openBtn = React.createRef();
-    this.menu = React.createRef();
+  state = {
+    dropdownOpen: false,
+    first: true
   }
 
   openDropdown = () => {
-    this.openBtn.current.classList.remove("Floating-Dropdown-Fade-In");
-    this.menu.current.classList.remove("Floating-Dropdown-Fade-Out");
-    this.menu.current.classList.add("Floating-Dropdown-Fade-In");
-    this.openBtn.current.classList.add("Floating-Dropdown-Fade-Out");
-
-  };
-
+    this.setState({dropdownOpen: true, first: false})
+  }
   closeDropdown = () => {
-    this.menu.current.classList.remove("Floating-Dropdown-Fade-In");
-    this.openBtn.current.classList.remove("Floating-Dropdown-Fade-Out");
-    this.menu.current.classList.add("Floating-Dropdown-Fade-Out");
-    this.openBtn.current.classList.add("Floating-Dropdown-Fade-In");
-  };
+    this.setState({dropdownOpen: false})
+  }
 
   render() {
+    let menuClasses = classnames('FloatingDropdownContainerMiniSubmenuListGroup', {
+      'Floating-Dropdown-Fade-Out': this.state.first ? false : !this.state.dropdownOpen,
+      'Floating-Dropdown-Fade-In': this.state.dropdownOpen
+    })
+    let btnClasses = classnames('FloatingDropdownContainerMiniSubmenu', {
+      'Floating-Dropdown-Fade-Out': this.state.dropdownOpen,
+      'Floating-Dropdown-Fade-In': !this.state.dropdownOpen
+    })
     return (
       <div className={styles.FloatingDropdownContainer}
-           style={this.props.containerStyle}>
+        style={this.props.containerStyle}>
         <div className={styles.FloatingDropdownSideBar}>
-          <button className={styles.FloatingDropdownContainerMiniSubmenu}
-                  style={this.props.toggleStyle}
-                  ref={this.openBtn}
-                  onClick={this.openDropdown}>
+          <button className={btnClasses}
+            style={this.props.toggleStyle}
+            onClick={this.openDropdown}>
             <span>{this.props.indexName}</span>
           </button>
-          <div className={styles.FloatingDropdownContainerMiniSubmenuListGroup}
-               style={this.props.dropdownStyle}
-               ref={this.menu}>
+          <div className={menuClasses}
+            style={this.props.dropdownStyle}>
             <div className={styles.FloatingDropdownSubmenuTopBar}
-                 style={this.props.dropdownTopBarStyle}>
+              style={this.props.dropdownTopBarStyle}>
               {this.props.indexName}
               <span onClick={this.closeDropdown}>
-                                {this.props.toggleAction ? this.props.toggleAction : "X"}
-                            </span>
+                {this.props.toggleAction ? this.props.toggleAction : 'X'}
+              </span>
             </div>
             <div className={styles.FloatingDropdownSubmenuContent}
-                 style={this.props.dropdownContentStyle}>
+              style={this.props.dropdownContentStyle}>
               {this.props.children}
             </div>
           </div>
@@ -54,7 +51,6 @@ class FloatingDropdown extends Component {
       </div>
     )
   }
-
 }
 
-export default FloatingDropdown;
+export default FloatingDropdown

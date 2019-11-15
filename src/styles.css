@@ -10,7 +10,7 @@
   bottom: 200px;
 }
 
-.FloatingDropdownContainerMiniSubmenu {
+:global(.FloatingDropdownContainerMiniSubmenu) {
   opacity: 1;
   background-color: rgb(14, 160, 255);
   border: 1px solid #0ea0ff;
@@ -27,7 +27,7 @@
   position: relative;
 }
 
-.FloatingDropdownContainerMiniSubmenuListGroup {
+:global(.FloatingDropdownContainerMiniSubmenuListGroup) {
   border: 1px solid #0ea0ff;
   border-radius: 4px;
   top: 0px;
@@ -59,6 +59,7 @@
 @keyframes FloatingDropdownFadeIn {
   0% {
     opacity: 0;
+    visibility: hidden;
   }
   100% {
     opacity: 1;
@@ -77,55 +78,14 @@
   }
 }
 
-/*@keyframes :global(fadeOut) {*/
-/*  0% {*/
-/*    opacity: 1;*/
-/*    visibility: visible;*/
-/*  }*/
-/*  100% {*/
-/*    opacity: 0;*/
-/*    visibility: hidden;*/
-/*  }*/
-/*}*/
-
-/*@keyframes :global(fadeIn) {*/
-/*  0% {*/
-/*    opacity: 0;*/
-/*  }*/
-/*  100% {*/
-/*    opacity: 1;*/
-/*    visibility: visible;*/
-/*  }*/
-/*}*/
-
 :global(.Floating-Dropdown-Fade-In) {
   animation: FloatingDropdownFadeIn 0.5s ease;
-  /*animation-duration: 0.5s;*/
   animation-iteration-count: 1;
-  /*animation-timing-function: ease;*/
   animation-fill-mode: forwards;
 }
 
 :global(.Floating-Dropdown-Fade-Out) {
   animation: FloatingDropdownFadeOut 0.5s ease;
-  /*animation-duration: 0.5s;*/
   animation-iteration-count: 1;
-  /*animation-timing-function: ease;*/
   animation-fill-mode: forwards;
 }
-
-/*.Floating-Dropdown-Fade-In {*/
-/*  animation-name: fadeIn;*/
-/*  animation-duration: 0.5s;*/
-/*  animation-iteration-count: 1;*/
-/*  animation-timing-function: ease;*/
-/*  animation-fill-mode: forwards;*/
-/*}*/
-
-/*.Floating-Dropdown-Fade-Out {*/
-/*  animation-name: fadeOut;*/
-/*  animation-duration: 0.5s;*/
-/*  animation-iteration-count: 1;*/
-/*  animation-timing-function: ease;*/
-/*  animation-fill-mode: forwards;*/
-/*}*/
