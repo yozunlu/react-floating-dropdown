@@ -45,8 +45,8 @@ export default class App extends Component {
 
     return (
       <ReactFloatingDropdown indexName="Floating Dropdown"
-                             containerStyle={{bottom: '150px'}}
-                             toggleStyle={{width: '150px'}}
+                             containerStyle={{bottom: "150px"}}
+                             toggleStyle={{width: "150px"}}
                              dropdownStyle={{borderRadius: "10px"}}
                              dropdownTopBarStyle={{backgroundColor: "#232624"}}
                              toggleAction={(<i className="fas fa-times-circle" />)}
