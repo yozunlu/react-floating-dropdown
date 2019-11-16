@@ -35,9 +35,25 @@ export default class App extends Component {
       {
         id: 8,
         title: 'Menu item 8'
+      },
+      {
+        id: 9,
+        title: 'Menu item 9'
+      },
+      {
+        id: 10,
+        title: 'Menu item 10'
+      },
+      {
+        id: 11,
+        title: 'Menu item 11'
+      },
+      {
+        id: 12,
+        title: 'Menu item 12'
       }
     ]
-  }
+  };
 
   render () {
     return (
@@ -47,11 +63,8 @@ export default class App extends Component {
         dropdownStyle={{borderRadius: '10px'}}
         dropdownTopBarStyle={{backgroundColor: '#232624'}}
         toggleAction={(<i className='fas fa-times-circle' />)}
-        dropdownContentStyle={{height: '95%'}}
+        dropdownContentStyle={{height: '100%'}}
       >
-        <div className='menuItem'>
-          <p>Menu Item 1</p>
-        </div>
         {
           this.state.menu.map(item => (
             <div className='menuItem' key={item.id}>

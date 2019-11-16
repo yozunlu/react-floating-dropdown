@@ -10,12 +10,14 @@
 npm install --save react-floating-dropdown
 ```
 
+####[Live Demo](https://yozunlu.github.io/react-floating-dropdown/)
+
 ## Usage
 
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-floating-dropdown'
+import ReactFloatingDropdown from 'react-floating-dropdown'
 
 class Example extends Component {
   render () {

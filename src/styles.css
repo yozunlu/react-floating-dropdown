@@ -37,6 +37,7 @@
   width: 45vh;
   overflow-y: hidden;
   flex-direction: column;
+  display: flex;
   position: absolute;
 }
 
